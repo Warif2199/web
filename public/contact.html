@@ -29,6 +29,11 @@
   document.getElementById("contact-form").addEventListener("submit",async function (e) {
     e.preventDefault();
     const form = e.target
+     
+    if (!form.checkValidity()) {
+      form.reportValidity(); // يعرض تنبيه للمستخدم عن الخطأ
+      return; // يوقف الإرسال
+    }
 
     const data = {
    name: form.Name.value,
@@ -104,7 +109,7 @@
             <li><a href="index.html" class="slide-vertical" data-splitting>Home</a></li>
             <li><a href="about.html" class="slide-vertical" data-splitting>About</a></li>
             <li><a href="resume.html" class="slide-vertical" data-splitting>Resume</a></li>
-            <li><a href="portfolio.html" class="slide-vertical" data-splitting>Portfolio</a></li>
+            <li><a href="portfolio.html" class="slide-vertical" data-splitting>Project</a></li>
             <!-- <li><a href="blog.html" class="slide-vertical" data-splitting>Blog</a></li> -->
         </ul>
     </nav>
@@ -125,7 +130,7 @@
                                 <div class="social-links">
                                     <a href="https://www.instagram.com/warif_alrdyan?igsh=MXRxN2ljY215cG15NQ%3D%3D&utm_source=qr" class="slide-horizontal" data-splitting>Instagram</a>
                                     <a href="https://x.com/warifalrdyan?s=21" class="slide-horizontal" data-splitting>Twitter</a>
-                                    <a href="" class="slide-horizontal" data-splitting>Linkedin</a>
+                                    <a href="https://www.linkedin.com/in/warif-alrdyan-b49675375?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="slide-horizontal" data-splitting>Linkedin</a>
                                 </div>
                                 <!-- /social-links -->
                             </div>
@@ -144,7 +149,9 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <!-- input field for EMAIL -->
-                                                <input class="input_field required" type="email" id=Email name="email" placeholder="Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address">
+                                                <!-- <input class="input_field required" type="email" id=Email name="email" placeholder="Email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(com|net|org|edu|gov|info|sa|co.uk)$" title="Please enter a valid email address user@gmail.domain"> -->
+                                                 <input class="input_field required" type="email" id=Email name="email" placeholder="Email" required title="Please enter a valid email address user@gmail.domain">
+
                                             </div>
                                             <div class="col-md-12">
                                                 <!-- input field for Phone Nummer  -->
@@ -210,7 +217,7 @@
     <script src="js/jquery-v1.12.4.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/ajax-mail.js"></script>
+    <!-- <script src="js/ajax-mail.js"></script> -->
 
 </body>
 
